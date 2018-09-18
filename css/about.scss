@@ -1,0 +1,131 @@
+@charset "UTF-8";
+%center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.about-container{
+  .container-top{
+    height: auto;
+  }
+  .container-section{
+    .section-title{
+      color: #1f252f;
+      .icon-about-type-0{
+        margin: 0 20px -6px 0;
+      }
+      .icon-about-type-1{
+        margin: 0 20px -6px 0;
+      }
+    }
+  }
+  .section-introduction{
+    background-color: #f7f8fa;
+    .section-content{
+      width: 1160px;
+      margin:  0 auto 20px;
+      p{
+        color: #1f252f;
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+  }
+  .section-culture{
+    .row-1{
+      .item{
+        float: left;
+        position: relative;
+        width: 455px;
+        height: 262px;
+        margin: 0 0 46px 46px;
+        &:first-child{
+          margin-left: 0;
+        }
+        .mask{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0);
+          color: #fff;
+          -webkit-transition: background-color 500ms;
+          -moz-transition: background-color 500ms;
+          -ms-transition: background-color 500ms;
+          -o-transition: background-color 500ms;
+          transition: background-color 500ms;
+          .layer-content{
+            text-align: center;
+            opacity: 1;
+            -webkit-transition: opacity 1s;
+            -moz-transition: opacity 1s;
+            -ms-transition: opacity 1s;
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+            @extend %center;
+            .text{
+              font-size: 18px;
+              font-weight: bold;
+              margin-top: 10px;
+            }
+          }
+          .describe{
+            position: absolute;
+            width: 80%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            opacity: 0;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+          }
+          &:hover{
+            background-color: rgba(0,0,0,0.3);
+            .layer-content{
+              opacity: 0;
+            }
+            .describe{
+              opacity: 1;
+              bottom: 100px;
+            }
+          }
+        }
+      }
+    }
+    .row-2{
+      .item{
+        float: left;
+        width: 235px;
+        margin-left: 10px;
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

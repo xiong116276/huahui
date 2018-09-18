@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+.quality-information-container{
+  .container-top{
+    background-image: url("../images/product-service/top-bg-2.png");
+  }
+  .section-scene{
+    .section-content{
+      height: 600px;
+      background: url("../images/product-service/big-quality.png") no-repeat center;
+      -webkit-background-size: 844px 574px;
+      background-size: 844px 574px;
+
+      .item{
+        position: absolute;
+        min-width: 120px;
+        &.item-0{
+          top: 150px;
+          left: 195px;
+        }
+        &.item-1{
+          top: 58px;
+          left: 870px;
+        }
+        &.item-2{
+          top: 465px;
+          left: 50px;
+        }
+        &.item-3{
+          top: 530px;
+          left: 665px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

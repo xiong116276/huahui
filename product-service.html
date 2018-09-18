@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="icon" href="images/huahui.ico">
+	<title>产品服务</title>
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<header id="header"></header>
+	<div class="my-container product-service-container">
+		<div class="container-top clearfix">
+			<div class="top-content clearfix">
+				<div class="top-left fl">
+					<p class="text-title"></p>
+					<ul class="text-list"></ul>
+					<a class="btn-more" href="#">了解更多</a>
+				</div>
+				<div class="top-right fr" style="top:10px"><img src="" alt=""></div>
+			</div>
+		</div>
+		<!--技术优势-->
+		<div class="container-section technology-section">
+			<div class="center-box">
+				<p class="section-title"><span class="icon-star"></span>技术优势</p>
+				<div class="section-content clearfix"></div>
+			</div>
+		</div>
+		<!--服务实体经济-->
+		<div class="container-section service-section">
+			<div class="center-box">
+				<p class="section-title"><span class="icon-star"></span>服务实体经济</p>
+				<div class="section-content clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<footer id="footer"></footer>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/conmmon.js"></script>
+	<script>
+		var productService={
+		  "top_section":{
+        "title":"质量分析&预测系统",
+        "text_list":[
+          "专注工业产品的质量问题、企业质量管理与质量决策",
+          "对原材料、组件供应链、加工装配、产品运行、售后维护进行全程大数据分析",
+          "服务于企业供应链管理、运营管理、售后维保及决策系统"
+        ],
+        "url":"solution.html",
+        "img":"images/product-service/top-right-0.png"
+			},
+		  "technology_section":[
+				{
+				  "imgClass":"img-ronghe",
+					"title":"融合",
+					"float_layer":["基于数据融合", "联接信息孤岛", "流程透明","全程掌握"]
+				},
+        {
+          "imgClass":"img-fenxi",
+          "title":"分析",
+          "float_layer":["专业算法模型组合","决策树、5M1E、SVM、", "贝叶斯、CPK、GRR、", "Correlation"]
+        },
+        {
+          "imgClass":"img-panduan",
+          "title":"诊断",
+          "float_layer":["专家数据库","远程诊断", "多维度对比分析"]
+        },
+        {
+          "imgClass":"img-yuce",
+          "title":"预测",
+          "float_layer":["海量产能/性能数据", "预测质量趋势"]
+        },
+        {
+          "imgClass":"img-wajue",
+          "title":"挖掘",
+          "float_layer":["算法挖掘隐藏信息", "拓展基础数据应用"]
+        },
+        {
+          "imgClass":"img-show",
+          "title":"展示",
+          "float_layer":["多平台分级推送", "可视化动态呈现", "报表自动生成"]
+        }
+			],
+			"service_section":[
+        {
+          "img":"images/product-service/product-service-4.png",
+          "text":"生产制造行业"
+        },
+        {
+          "img":"images/product-service/product-service-1.png",
+          "text":"智能交通领域"
+        },
+				{
+					"img":"images/product-service/product-service-0.png",
+					"text":"消费电子及上游供应链"
+				},
+        {
+          "img":"images/product-service/product-service-3.png",
+          "text":"军工领域"
+        },
+        {
+          "img":"images/product-service/product-service-2.png",
+          "text":"智能家电行业"
+        },
+        {
+          "img":"images/product-service/product-service-5.png",
+          "text":"新能源领域"
+        }
+			]
+		};
+    setProducrService(productService);
+		function setProducrService(data){
+      setTop(data.top_section);
+      setTechnologySection(data.technology_section);
+      setSectionService(data.service_section);
+      //top
+      function setTop(data){
+        var top = data;
+        var f = $(".top-content");
+        var arr = top.text_list;
+        var list = "";
+        $(arr).each(function(i,v){
+          list +="<li>"+v+"</li>";
+        });
+
+        f.find(".text-list").html(list);
+        f.find(".text-title").text(top.title);
+        f.find(".btn-more").attr("href",top.url);
+        f.find(".top-right img").attr("src",top.img);
+      }
+      function setTechnologySection(data){
+        var arr = data;
+        var frag = document.createDocumentFragment();
+        for (var i = 0,len = arr.length;i < len; i++){
+          var list = arr[i].float_layer;
+          var listContent = "";
+          $(list).each(function(i,v){
+            listContent += '<p class="layer-item">'+v+'</p>'
+          });
+          var item = $('<div class="technology-item"><div class="scale-mask"></div><div class="item-content"><div class="img-content"><div class="img-bg"></div><span class="img center '+arr[i].imgClass+'"></span></div><p class="title">'+arr[i].title+'</p><div class="float-layer">'+listContent+'</div></div></div>').appendTo($(frag));
+          $(item).on("mouseenter",function(){
+            $(this).find(".float-layer").stop().slideDown();
+          });
+          $(item).on("mouseleave",function(){
+            $(this).find(".float-layer").stop().slideUp();
+          });
+        }
+
+        $(".technology-section .section-content").html(frag);
+      }
+      function setSectionService(data) {
+        var arr = data;
+        var frag = document.createDocumentFragment();
+        $(arr).each(function(i,v){
+          $('<div class="item scale-img"><img class="img" src="'+v.img+'" alt=""><div class="mask"><div class="text center">'+v.text+'</div></div></div>').appendTo($(frag));
+        });
+        $(".service-section .section-content").html(frag);
+      }
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

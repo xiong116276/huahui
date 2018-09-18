@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="icon" href="images/huahui.ico">
+	<title>华会科技</title>
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		#header .home_nav{padding-right: 17px;}
+	</style>
+</head>
+<body>
+	<header id="header"></header>
+	<div class="home_banner">
+		<div class="swiper-container">
+			<div class="swiper-wrapper"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/swiper-3.4.2.min.js"></script>
+	<script src="js/conmmon.js"></script>
+	<script>
+    setHeight();
+    window.onresize = function(){
+      setHeight();
+    };
+    function setHeight() {
+      var H = $(window).height();
+      var t = $(".home_banner").offset().top;
+      $(".home_banner .swiper-container").height(H - t);
+    }
+
+		var banner = [
+			{
+			  "img":"images/home-banner-1.jpg",
+				"text":["服务实体经济","立足继续质量改进  创造更多社会价值"],
+				"url":"product-service.html"
+			},
+			{
+        "img":"images/home-banner-2.jpg",
+        "text":["强国智造 质量为先","为工业产品质量提供大数据分析解决方案"],
+        "url":"product-qualityInformation.html"
+			},
+      {
+        "img":"images/home-banner-3.jpg",
+        "text":["数据互联 <span>搭建城市智慧交通平台</span>","健康档案、智慧运营、安全辅助、功能拓展"],
+        "url":"product-healthRecords.html"
+      },
+      {
+        "img":"images/home-banner-4.jpg",
+        "text":["制造即服务 数据即价值","智能维保、专家库远程诊断、配件管理"],
+        "url":"product-zhinengWeihu.html"
+      }
+		];
+    setBanner(banner);
+		function setBanner(data){
+		  var frag = document.createDocumentFragment();
+		  if(data.length > 0){
+				$(data).each(function(i,v){
+          var text = "";
+				  if(v.text.length > 0){
+				    $(v.text).each(function (i2, v2) {
+              text += '<p>'+v2+'</p>'
+            });
+					}
+					$('<div onclick="window.location.href=\''+v.url+'\'" class="swiper-slide"><div class="slide-mask"></div><img class="slide-img" src="'+v.img+'" alt=""><div class="slide-text">'+text+'</div></div>').appendTo($(frag));
+				})
+			}
+			$(".home_banner .swiper-wrapper").html(frag);
+      var mySwiper = new Swiper('.swiper-container', {
+        loop : true,
+        autoplay: 5000,
+        speed:1500,
+        preventLinksPropagation : false,
+        autoplayDisableOnInteraction : false,
+        pagination : '.swiper-pagination',
+        paginationClickable :true,
+        onSlideChangeEnd: function(swiper){
+          slideAnimation();
+        }
+      });
+      slideAnimation();
+      function slideAnimation(){
+        $(".swiper-container .swiper-slide-active").siblings(".swiper-slide").children(".slide-mask").removeClass('mask-filter');
+        $(".swiper-container .swiper-slide-active").siblings(".swiper-slide").children(".slide-img").removeClass('img-scale');
+        $(".swiper-container .swiper-slide-active").children(".slide-mask").addClass("mask-filter");
+        $(".swiper-container .swiper-slide-active").children(".slide-img").addClass("img-scale");
+      }
+		}
+
+	</script>
+</body>
+</html>

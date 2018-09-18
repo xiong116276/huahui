@@ -1,0 +1,29 @@
+.quality-information-container .container-top {
+  background-image: url("../images/product-service/top-bg-1.png"); }
+.quality-information-container .section-scene .section-content {
+  height: 600px;
+  background: url("../images/product-service/health-big.png") no-repeat center;
+  -webkit-background-size: 844px 574px;
+  background-size: 844px 574px; }
+  .quality-information-container .section-scene .section-content .item {
+    position: absolute; }
+    .quality-information-container .section-scene .section-content .item.item-0 {
+      top: 50px;
+      left: 185px; }
+    .quality-information-container .section-scene .section-content .item.item-1 {
+      top: 20px;
+      left: 1140px; }
+    .quality-information-container .section-scene .section-content .item.item-2 {
+      top: 100px;
+      left: 880px; }
+    .quality-information-container .section-scene .section-content .item.item-3 {
+      top: 265px;
+      left: 980px; }
+    .quality-information-container .section-scene .section-content .item.item-4 {
+      top: 380px;
+      left: 185px; }
+    .quality-information-container .section-scene .section-content .item.item-5 {
+      top: 530px;
+      right: 495px; }
+
+/*# sourceMappingURL=product-qualityInformation.css.map */

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="icon" href="images/huahui.ico">
+	<title>企业活动</title>
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<header id="header"></header>
+	<div class="my-container about-activity-container">
+		<div class="container-top">
+			<img src="images/about/top-bg-activity.png" alt="">
+			<div class="top-text">
+				<p>企业活动</p>
+				<p>BUSINESS ACTIVITY</p>
+			</div>
+		</div>
+		<div class="container-section">
+			<div class="activity-content clearfix"></div>
+		</div>
+	</div>
+	<footer id="footer"></footer>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/conmmon.js"></script>
+	<script>
+    function setHeight() {
+      var h = 0;
+      $(".animate-view").on("mouseenter",function () {
+        h = 0;
+        $(this).find(".describe span").each(function (i, v) {
+          h+=parseFloat(getComputedStyle(v).height);
+        });
+
+        $(this).find(".text").animate({"height":h+50+"px"});
+      });
+      $(".animate-view").on("mouseleave",function () {
+        $(this).find(".text").animate({"height":"108px"});
+      });
+    }
+
+    var activity = [
+			{
+			  "img":"images/about/img-activity-0.png",
+				"title":"华会好声音，歌声悠扬",
+				"describe":"公司前几年的辛勤耕耘在2017年喜获丰收，尤其是进入17年下半年，一个又一个项目纷至沓来，公司全体员工都撸起了袖子，干得热火朝天。公司深知员工工作积极和辛苦，为了让员工更好得劳逸结合，公司在上周五组织员工去KTV一展歌喉，释放工作压力。"
+			},
+      {
+        "img":"images/about/img-activity-1.png",
+        "title":"周末的愉悦",
+        "describe":"这是华会科技的不定期福利，周五的羽毛球活动。员工们格外喜欢这项活动，不仅可以运动锻炼身体，更重要的是运动之后的美餐和谈天说地的闲聊，以这样的方式开始周末，着实惬意。"
+      },
+      {
+        "img":"images/about/img-activity-2.png",
+        "title":"生日快乐，亲爱的家人",
+        "describe":"生活上，华会科技对员工的关心也是无微不至的。为感谢员工的辛勤付出和贯彻公司“员工就是家人”的想法，公司会不定期组织员工月度生日会，让当月寿星和全体员工一起度过这温馨而甜蜜的时光。"
+      },
+      {
+        "img":"images/about/img-activity-3.png",
+        "title":"大自然，我们来啦",
+        "describe":"15年8月，华会科技为全体员工组织了一次户外活动——横岗园山风景区一日游。"
+      },
+      {
+        "img":"images/about/img-activity-4.png",
+        "title":"工作、学习、悠闲下午茶",
+        "describe":"华会科技始终坚持以人为本的管理理念，像对待家人一样对待每一位员工。|工作上，公司会为每一位入职的新员工进行入职培训，让新员工对公司有一个全面而深入的了解，更快融入公司这个大家庭。"
+      },
+      {
+        "img":"images/about/img-activity-5.png",
+        "title":"挥洒汗水，激扬青春",
+        "describe":"生活不止繁忙的工作，还有工作之后的放松和惬意。|华会科技十分重视员工工作和生活的平衡，为更好地督促员工在工作之余勤于锻炼，增强员工身体素质，同时丰富员工的业余生活及增进同事间的交流，华会科技会定期为员工组织羽毛球活动。"
+      }
+		];
+		setActivity(activity);
+		function setActivity(data){
+			var frag = document.createDocumentFragment();
+
+			for(var i = 0,len = data.length;i < len;i++){
+        var html = "";
+        $(data[i].describe.split("|")).each(function (i, v) {
+          html+='<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+v+'</span><br>'
+        });
+			  $('<div class="item animate-view"><div class="animate-bg"></div> <img class="img" src="'+data[i].img+'" alt=""><div class="animate-content"><div class="text"><p class="title">'+data[i].title+'</p><p class="describe">'+html+'</p></div></div></div>').appendTo($(frag));
+			}
+
+			$(".activity-content").html(frag);
+      setHeight();
+		}
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

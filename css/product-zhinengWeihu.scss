@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.zhineng-weihu-container{
+  .container-top{
+    background-image: url("../images/product-service/top-bg-3.png");
+  }
+  .section-scene{
+    .section-content{
+      height: 600px;
+      background: url("../images/product-service/big-zhineng.png") no-repeat center;
+      -webkit-background-size: 844px 574px;
+      background-size: 844px 574px;
+
+      .item{
+        position: absolute;
+        min-width: 120px;
+        &.item-0{
+          top: 125px;
+          left: 935px;
+        }
+        &.item-1{
+          top: 440px;
+          left: 50px;
+        }
+        &.item-2{
+          top: 465px;
+          left: 630px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="icon" href="images/huahui.ico">
+	<title>应用案例</title>
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<header id="header"></header>
+	<div class="my-container solution-anli-container">
+		<div class="container-top">
+			<img src="images/solution/top-solution-anli.png" alt="">
+			<div class="top-text">
+				<p>各行业应用案例</p>
+				<p><a class="btn-more" href="about-contact.html">联系我们</a></p>
+			</div>
+		</div>
+		<div class="container-section"></div>
+	</div>
+ 	<footer id="footer"></footer>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/conmmon.js"></script>
+	<script>
+		window.onload = function () {
+		  var href = window.location.href;
+		  if(href.indexOf("?") > -1){
+        var id = '#'+href.match(/\?([\s\S]*)/)[1];
+        if($(id).length > 0){
+          var t = $(id).offset().top;
+          t-=72;/*悬浮菜单的高度*/
+          window.scrollTo(0,t);
+        }
+			}
+    };
+    var data_anli=[
+			{
+			  "id":"sczz",
+			  "show_img":"images/solution/solution-anli-0.png",
+				"show_text":{
+			    "row_1":{
+			      "title":"应用案例：生产制造行业",
+						"describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+					},
+          "row_2":{
+            "title":"客户收益",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          }
+				}
+			},
+      {
+        "id":"znjt",
+        "show_img":"images/solution/solution-anli-1.png",
+        "show_text":{
+          "row_1":{
+            "title":"应用案例：智能交通领域",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          },
+          "row_2":{
+            "title":"客户收益",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          }
+        }
+      },
+      {
+        "id":"xfdz",
+        "show_img":"images/solution/solution-anli-2.png",
+        "show_text":{
+          "row_1":{
+            "title":"应用案例：消费电子及上游供应链",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          },
+          "row_2":{
+            "title":"客户收益",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          }
+        }
+      },
+      {
+        "id":"xnyhy",
+        "show_img":"images/solution/solution-anli-5.png",
+        "show_text":{
+          "row_1":{
+            "title":"应用案例：新能源行业",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          },
+          "row_2":{
+            "title":"客户收益",
+            "describe":"为世界知名EMS工厂定制质量信息平台，采集车间流水线的生产大数据，及时发送至云端，提供原材料监督、质量监控、及时预警服务，并将信息分级，及时、安全的推送至车间看板、用户终端。"
+          }
+        }
+      }
+		];
+    set_anli(data_anli);
+    function set_anli(data){
+      var arr = data;
+      var frag = document.createDocumentFragment();
+      var type = "";
+      for(var i = 0,len = arr.length;i < len ;i++){
+        if(i % 2 === 0){
+          type = "type-0";
+				}else{
+          type = "type-1";
+				}
+				var item = $('<div id="'+arr[i].id+'"  class="item clearfix '+type+'"></div>').appendTo($(frag));
+        var content = $('<div class="content clearfix"></div>').appendTo(item);
+        var img = $('<div class="show-img "><img src="'+arr[i].show_img+'" alt=""></div>').appendTo(content);
+        var text = $('<div class="show-text">' +
+					'<div class="row-1"><p class="title">'+arr[i].show_text.row_1.title+'</p><p class="describe">'+arr[i].show_text.row_1.describe+'</p></div>\n' +
+          '<div class="row-2"><p class="title">'+arr[i].show_text.row_2.title+'</p><p class="describe">'+arr[i].show_text.row_2.describe+'</p></div>\n' +
+          '</div>').appendTo(content);
+			}
+			$(".container-section").html(frag);
+		}
+	</script>
+</body>
+</html>

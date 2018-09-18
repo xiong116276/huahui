@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+.product-service-container{
+  .container-top{
+    background-image: url("../images/product-service/top-bg-0.png");
+  }
+  .technology-section{
+    background-color: #f7f8fa;
+    .technology-item{
+      position: relative;
+      float: left;
+      border: 1px dashed #b5b8ba;
+      margin-left: 20px;
+
+      .scale-mask{
+        width: 224px;
+        height: 334px;
+        border: 1px solid transparent;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        -ms-transition: all 500ms;
+        -o-transition: all 500ms;
+        transition: all 500ms;
+      }
+      .img-content{
+        position: relative;
+        width: 120px;
+        height: 120px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        //background-color: #fff;
+        text-align: center;
+        margin: 0 auto 20px;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        -ms-transition: all 500ms;
+        -o-transition: all 500ms;
+        transition: all 500ms;
+        opacity: 1;
+        .img-bg{
+          position: absolute;
+          opacity: 0;
+          top:0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 1px;
+          height: 1px;
+          z-index: 10;
+          margin: auto;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          //background-color: rgba(0,0,0,.2);
+          background-color: #0086ff;
+
+          -webkit-transition: all 500ms;
+          -moz-transition: all 500ms;
+          -ms-transition: all 500ms;
+          -o-transition: all 500ms;
+          transition: all 500ms;
+        }
+        .img{
+          display: block;
+          z-index: 50;
+          background-repeat: no-repeat;
+          background-position: center;
+          -webkit-background-size: contain;
+          background-size: contain;
+          width: 120px;
+          height: 120px;
+          &.img-ronghe{
+            width: 73px;
+            background-image: url("../images/product-service/product-service-ronghe.png");
+          }
+          &.img-fenxi{
+            width: 61px;
+            background-image: url("../images/product-service/product-service-fenxi.png");
+          }
+          &.img-panduan{
+            width: 65px;
+            background-image: url("../images/product-service/product-service-panduan.png");
+          }
+          &.img-yuce{
+            width: 70px;
+            background-image: url("../images/product-service/product-service-yuce.png");
+          }
+          &.img-wajue{
+            width: 77px;
+            background-image: url("../images/product-service/product-service-wajue.png");
+          }
+          &.img-show{
+            width: 78px;
+            background-image: url("../images/product-service/product-service-show.png");
+          }
+        }
+      }
+      &:hover{
+        .scale-mask{
+          -webkit-transform: scale(1.05);
+          -moz-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+          -o-transform: scale(1.05);
+          transform: scale(1.05);
+          border: 1px solid #2f94f2;
+          background-color: #0086ff;
+        }
+        .img-content{
+          height: 0;
+          opacity: 0;
+        }
+        color: #fff;
+      }
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+      .item-content{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        .title{
+          font-weight: bold;
+          font-size: 18px;
+          text-align: center;
+        }
+        .float-layer{
+          display: none;
+          text-align: center;
+          font-size: 14px;
+          margin-top: 10px;
+          p{
+            line-height: 20px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .service-section{
+    margin-bottom: 0;
+    .item{
+      position: relative;
+      float: left;
+      width: 455px;
+      //height: 256px;
+      //cursor: pointer;
+      overflow: hidden;
+      margin-right: 46px;
+      margin-bottom: 40px;
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+      .mask{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.2);
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

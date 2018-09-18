@@ -1,0 +1,111 @@
+@charset "UTF-8";
+//动画效果
+.animate-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 10;
+  opacity: 0;
+  background-color: rgba(0,0,0,.4);
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.animate-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 50;
+  padding: 0;
+}
+.about-activity-container{
+  .container-top{
+    height: auto;
+  }
+  .container-section{
+    padding-top: 70px;
+    .activity-content{
+      width: 1080px;
+      margin: 0 auto;
+    }
+    .item{
+      position: relative;
+      float: left;
+      width: 345px;
+      margin-bottom: 24px;
+      margin-right: 20px;
+      overflow: hidden;
+
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+      &:hover{
+        .animate-bg{
+          opacity:1;
+        }
+        .text{
+          top: 0 !important;
+          .describe{
+            display: block;
+            height: auto;
+          }
+        }
+      }
+      .text{
+        position: absolute;
+        width: 100%;
+        color: #fff;
+        top:310px;
+        bottom: 0;
+        margin: auto;
+        -webkit-transition: top 1s;
+        -moz-transition: top 1s;
+        -ms-transition: top 1s;
+        -o-transition: top 1s;
+        transition: top 1s;
+
+        .title{
+          //position: absolute;
+          left: 0;
+          font-size: 20px;
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 20px;
+        }
+        .describe{
+          //position: absolute;
+          height: 50px;
+          padding: 0 20px;
+          left: 0;
+          top: 60px;
+          font-size: 14px;
+          width: 100%;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp:2;
+          white-space: normal;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          -webkit-transition: height 1s;
+          -moz-transition: height 1s;
+          -ms-transition: height 1s;
+          -o-transition: height 1s;
+          transition: height 1s;
+          >span{
+            display: inline-block;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
